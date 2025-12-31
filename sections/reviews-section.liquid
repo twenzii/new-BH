@@ -1,0 +1,258 @@
+<section class="reviews-section">
+  <div class="container">
+    <h2 class="reviews-title">{{ section.settings.reviews_title }}</h2>
+    <p class="reviews-subtitle">
+      {{ section.settings.reviews_subheading | html }}
+    </p>
+    <div class="reviews-slider-wrapper">
+      <div class="reviews-slider" id="reviews-slider">
+        {% for block in section.blocks %}
+        <div class="review-card">
+          <div class="review-header">
+            <img src="{{ block.settings.image | img_url: 'small' }}" alt="{{ block.settings.name }}" class="review-avatar">
+            <div class="review-info">
+              <div class="review-stars">{{ block.settings.stars }}</div>
+              <span class="review-name">{{ block.settings.name }}</span>
+            </div>
+          </div>
+          <p>{{ block.settings.review_text }}</p>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="slider-indicator-wrapper mobile-only">
+        <div class="slider-indicator" id="slider-indicator"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .reviews-section {
+    background: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  .reviews-title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .reviews-subtitle {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  .reviews-slider-wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+  .reviews-slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 15px;
+    padding: 10px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .reviews-slider::-webkit-scrollbar {
+    display: none;
+  }
+  .review-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    flex: 0 0 90%;
+    max-width: 400px;
+    scroll-snap-align: center;
+  }
+  .review-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .review-info {
+    display: flex;
+    flex-direction: column;
+  }
+  .review-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .review-name {
+    font-weight: bold;
+    margin-top: 5px;
+  }
+  .review-stars {
+    color: {{ section.settings.star_color }};
+    font-size: 18px;
+  }
+  .slider-indicator-wrapper {
+    width: 100%;
+    height: 6px;
+    background: #ddd;
+    border-radius: 3px;
+    margin-top: 15px;
+    position: relative;
+  }
+  .slider-indicator {
+    height: 6px;
+    background: black;
+    border-radius: 3px;
+    width: 10%;
+    transition: transform 0.3s ease, width 0.3s ease;
+  }
+  .mobile-only {
+    display: none;
+  }
+  @media (max-width: 768px) {
+    .reviews-slider {
+      gap: 10px;
+    }
+    .review-card {
+      flex: 0 0 95%;
+      max-width: 350px;
+    }
+    .mobile-only {
+      display: block;
+    }
+  }
+</style>
+
+<script>
+function initializeReviewsSlider() {
+  const slider = document.getElementById("reviews-slider");
+  const indicator = document.getElementById("slider-indicator");
+  const reviewCards = slider.querySelectorAll(".review-card");
+
+  function updateReviewCardHeights() {
+    let maxHeight = 0;
+    reviewCards.forEach(card => {
+      card.style.minHeight = "";
+    });
+    reviewCards.forEach(card => {
+      const cardHeight = card.offsetHeight;
+      if (cardHeight > maxHeight) {
+        maxHeight = cardHeight;
+      }
+    });
+    reviewCards.forEach(card => {
+      card.style.minHeight = maxHeight + "px";
+    });
+  }
+
+  function updateIndicator() {
+    const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+    let scrollLeft = slider.scrollLeft;
+    if (scrollLeft >= maxScrollLeft - 5) {
+      scrollLeft = maxScrollLeft;
+    }
+    const cardStyle = getComputedStyle(reviewCards[0]);
+    const cardWidth = reviewCards[0].getBoundingClientRect().width + parseInt(cardStyle.marginRight);
+    const totalSteps = Math.ceil(maxScrollLeft / cardWidth);
+    const stepWidth = slider.clientWidth / totalSteps;
+    let indicatorPosition = (scrollLeft / maxScrollLeft) * (slider.clientWidth - stepWidth);
+    if (scrollLeft === maxScrollLeft) {
+      indicatorPosition = slider.clientWidth - stepWidth;
+    }
+    indicator.style.transform = `translateX(${indicatorPosition}px)`;
+    indicator.style.width = `${stepWidth}px`;
+  }
+
+  function initialize() {
+    updateReviewCardHeights();
+    updateIndicator();
+  }
+
+  slider.addEventListener("scroll", updateIndicator);
+  window.addEventListener("resize", initialize);
+  initialize();
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  window.addEventListener("load", initializeReviewsSlider);
+  if (document.readyState === "complete") {
+    initializeReviewsSlider();
+  }
+});
+</script>
+
+{% schema %}
+{
+  "name": "Reviews Section",
+  "tag": "section",
+  "class": "shopify-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "reviews_title",
+      "label": "Section Title",
+      "default": "Honest Reviews about the Ellie Bra"
+    },
+    {
+      "type": "textarea",
+      "id": "reviews_subheading",
+      "label": "Subheading Text",
+      "default": "More than <strong>1M+</strong> women love our bra's, rating it <strong>4.7/5</strong> for its blend of comfort and lift."
+    },
+    {
+      "type": "color",
+      "id": "star_color",
+      "label": "Review Star Color",
+      "default": "#AF2463"
+    }
+  ],
+  "max_blocks": 10,
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review Widget",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Customer Image"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Customer Name",
+          "default": "Lauren T."
+        },
+        {
+          "type": "text",
+          "id": "stars",
+          "label": "Star Rating",
+          "default": "★★★★★"
+        },
+        {
+          "type": "textarea",
+          "id": "review_text",
+          "label": "Review Text",
+          "default": "Truthfully, this is the most comfortable bra I've ever worn! I am so glad I found this bra. It's so comfy, supportive but light and soft. Looks great under t-shirts as well!"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Reviews Section",
+      "category": "Testimonials",
+      "settings": {
+        "reviews_title": "Honest Reviews about the Ellie Bra",
+        "reviews_subheading": "More than <strong>1M+</strong> women love our bra's, rating it <strong>4.7/5</strong> for its blend of comfort and lift.",
+        "star_color": "#AF2463"
+      },
+      "blocks": [
+        {
+          "type": "review"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

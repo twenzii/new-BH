@@ -1,0 +1,151 @@
+<section class="as-seen-in">
+  <div class="container">
+    <h2 class="as-seen-text">AS SEEN IN</h2>
+    <div class="logos-wrapper">
+      {% for block in section.blocks limit: 5 %}
+        <div class="logo">
+          {% if block.settings.logo_image %}
+            <img src="{{ block.settings.logo_image | img_url: 'medium' }}" alt="Logo">
+          {% else %}
+            <span class="placeholder">Upload Logo</span>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Base Styles */
+  .as-seen-in {
+    padding: 15px 0 25px 0;
+    background-color: #ffffff;
+    text-align: center;
+    border-bottom: 1px solid #e2e2e2; /* Added divider */
+  }
+  
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* “AS SEEN IN” text – common styles */
+  .as-seen-text {
+    font-size: 16px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-align: center;
+  }
+  
+  /* Logos common styles */
+  .logos-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  
+  .logo {
+    text-align: center;
+  }
+  
+  .logo img {
+    height: auto;
+  }
+  
+  /* Desktop Styles */
+  @media (min-width: 769px) {
+    /* Flex layout so that the text and logos sit side by side */
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    /* Increased right margin for the text to add more space between it and the logos */
+    .as-seen-text {
+      margin: 0 20px 0 0;
+      flex: 0 0 auto;
+    }
+    
+    /* Increased gap between logos */
+    .logos-wrapper {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      gap: 100px;
+    }
+    
+    .logo img {
+      max-width: 100px;
+    }
+  }
+  
+  /* Mobile Styles */
+  @media (max-width: 768px) {
+    .container {
+      display: block;
+    }
+    
+    .as-seen-text {
+      margin-bottom: 10px;
+    }
+    
+    .logos-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    
+    .logo {
+      flex: 1 1 22%;
+      max-width: 22%;
+    }
+    
+    .logo img {
+      max-width: 70px;
+    }
+    
+    /* Hide the 5th logo on mobile */
+    .logos-wrapper .logo:nth-child(5) {
+      display: none;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "As Seen In",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo",
+      "limit": 5,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo_image",
+          "label": "Upload Logo"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "As Seen In",
+      "category": "Custom",
+      "blocks": [
+        { "type": "logo" },
+        { "type": "logo" },
+        { "type": "logo" },
+        { "type": "logo" },
+        { "type": "logo" }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,152 @@
+{% schema %}
+{
+  "name": "Custom Icon Section",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "icon_text",
+      "name": "Icon with Text",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon_image",
+          "label": "Upload SVG/GIF Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Feature Title"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Feature description goes here."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Icon Section",
+      "category": "Custom Sections",
+      "blocks": [
+        {
+          "type": "icon_text"
+        },
+        {
+          "type": "icon_text"
+        },
+        {
+          "type": "icon_text"
+        },
+        {
+          "type": "icon_text"
+        },
+        {
+          "type": "icon_text"
+        },
+        {
+          "type": "icon_text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+{% comment %}
+  Determine the number of grid columns:
+  - If there are less than 6 icons, use that number so that, for example, 4 icons appear in one row.
+  - Otherwise, use 3 columns.
+{% endcomment %}
+{% assign icon_count = section.blocks.size %}
+{% if icon_count < 6 %}
+  {% assign grid_columns = icon_count %}
+{% else %}
+  {% assign grid_columns = 3 %}
+{% endif %}
+
+<section class="custom-icon-section">
+  <div class="container">
+    <!-- Inline style sets the grid columns dynamically on desktop -->
+    <div class="icon-grid" style="grid-template-columns: repeat({{ grid_columns }}, 1fr);">
+      {% for block in section.blocks %}
+        <div class="icon-item" {{ block.shopify_attributes }}>
+          {% if block.settings.icon_image != blank %}
+            <div class="icon-img-wrapper">
+              <img src="{{ block.settings.icon_image | img_url: 'master' }}" alt="{{ block.settings.title }}" class="icon-img"/>
+            </div>
+          {% endif %}
+          <h3 class="icon-title">{{ block.settings.title }}</h3>
+          <p>{{ block.settings.description }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+.custom-icon-section {
+  text-align: center;
+  padding: 20px 0;
+  margin: 0;
+}
+
+.icon-grid {
+  display: grid;
+  gap: 30px; /* Even spacing between items */
+  justify-content: center;
+  align-items: start; /* Align items at the top */
+  margin-top: 10px;
+}
+
+.icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0;
+  font-size: 16px;
+}
+
+/* Wrapper to fix image container height so all logos align on the same row */
+.icon-img-wrapper {
+  height: 120px; /* Adjust this value to suit your icon dimensions */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.icon-img {
+  max-width: 120px; /* Icons scale dynamically on desktop */
+  width: auto;
+  height: auto;
+}
+
+.icon-title {
+  font-weight: bold; /* Ensures bold text */
+  font-size: 20px;
+}
+
+/* Mobile View - force a single column layout */
+@media (max-width: 768px) {
+  .custom-icon-section {
+    margin-top: -15px;
+  }
+  .icon-grid {
+    /* Override the inline grid-template-columns to force a single column on mobile */
+    grid-template-columns: 1fr !important;
+    max-width: 90%; /* Prevents text from stretching too far */
+    margin: 0 auto;
+  }
+  .icon-img {
+    width: 80px; /* Fixed size on mobile */
+  }
+  .icon-img-wrapper {
+    height: 80px; /* Adjust the wrapper height for mobile if necessary */
+  }
+}
+</style>

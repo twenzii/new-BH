@@ -1,0 +1,167 @@
+{% schema %}
+{
+  "name": "Valentine's Gift Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Headline",
+      "default": "Gift Comfort, Shape Love!"
+    },
+    {
+      "type": "textarea",
+      "id": "subheadline",
+      "label": "Subheadline",
+      "default": "Find the perfect Valentine’s gift—for her or yourself! Available in sizes S-4XL."
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Button Text",
+      "default": "SHOP NOW"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Button Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "box_stack_image",
+      "label": "Box Stack Image (Desktop)"
+    },
+    {
+      "type": "image_picker",
+      "id": "box_stack_image_mobile",
+      "label": "Box Stack Image (Mobile)"
+    },
+    {
+      "type": "range",
+      "id": "image_size",
+      "label": "Desktop Image Max Width (px)",
+      "default": 400,
+      "min": 100,
+      "max": 800,
+      "step": 10
+    },
+    {
+      "type": "range",
+      "id": "mobile_image_size",
+      "label": "Mobile Image Max Width (px)",
+      "default": 300,
+      "min": 100,
+      "max": 600,
+      "step": 10
+    }
+  ],
+  "presets": [
+    {
+      "name": "Valentine's Gift Banner",
+      "category": "Promotions"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="valentine-banner">
+  <div class="valentine-inner">
+    <div class="valentine-text-box">
+      <h2>{{ section.settings.headline }}</h2>
+      <p>{{ section.settings.subheadline }}</p>
+      <a href="{{ section.settings.cta_link }}" class="valentine-btn">{{ section.settings.cta_text }}</a>
+    </div>
+    <div class="valentine-image-box">
+      <picture>
+        {% if section.settings.box_stack_image_mobile != blank %}
+          <source media="(max-width: 767px)" srcset="{{ section.settings.box_stack_image_mobile | img_url: 'master' }}">
+        {% endif %}
+        <img src="{{ section.settings.box_stack_image | img_url: 'master' }}" alt="Stacked Boxes" class="box-image">
+      </picture>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Base Styles (apply to both desktop and mobile) */
+  .valentine-banner {
+    background: linear-gradient(to bottom, #fdded3, #f7d4c3);
+    text-align: center;
+    position: relative;
+  }
+  
+  .valentine-inner {
+    margin: 0 auto;
+  }
+  
+  .valentine-text-box {
+    text-align: center;
+  }
+  
+  .valentine-text-box h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0 0 10px;
+  }
+  
+  .valentine-text-box p {
+    font-size: 1rem;
+    margin: 10px 0;
+  }
+  
+  .valentine-btn {
+    display: inline-block;
+    background-color: #AF2463;
+    color: #fff;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+  }
+  
+  .box-image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Desktop Styles – screens 768px and above */
+  @media (min-width: 768px) {
+    .valentine-banner {
+      /* Only horizontal padding so that the image's bottom edge stays flush */
+      padding: 0 60px;
+    }
+    
+    .valentine-inner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+    }
+    
+    /* The desktop image max-width is controlled by the slider (in pixels) */
+    .box-image {
+      max-width: {{ section.settings.image_size }}px;
+    }
+  }
+  
+  /* Mobile Styles – screens 767px and below */
+  @media (max-width: 767px) {
+    .valentine-banner {
+      /* Top and side padding only; zero bottom padding to keep the image flush */
+      padding: 30px 30px 0 30px;
+    }
+    
+    .valentine-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Center children horizontally */
+      gap: 20px;
+      margin: 0 auto;
+    }
+    
+    /* The mobile image max-width is controlled by its own slider (in pixels) */
+    .box-image {
+      max-width: {{ section.settings.mobile_image_size }}px;
+    }
+  }
+</style>

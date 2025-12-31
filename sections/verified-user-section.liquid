@@ -1,0 +1,74 @@
+<div class="verified-user-section">
+  <div class="user-info">
+    <img src="{{ section.settings.user_image | img_url: 'small' }}" alt="User Image" class="user-avatar">
+    <span class="user-name">{{ section.settings.user_name }}</span>
+    <span class="verified-badge">✔</span>
+  </div>
+  <span class="review-count"><strong>{{ section.settings.review_count }}</strong> others love our bra</span>
+</div>
+
+<style>
+  .verified-user-section {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 16px;
+  }
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .user-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+  }
+  .user-name {
+    font-weight: bold;
+  }
+  .verified-badge {
+    color: #3498db;
+    font-size: 16px;
+  }
+  .review-count {
+    font-weight: bold;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Verified User Section",
+  "tag": "div",
+  "class": "shopify-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "user_image",
+      "label": "User Image"
+    },
+    {
+      "type": "text",
+      "id": "user_name",
+      "label": "User Name",
+      "default": "Sarah A."
+    },
+    {
+      "type": "text",
+      "id": "review_count",
+      "label": "Review Count",
+      "default": "132,535+"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Verified User Section",
+      "category": "Testimonials",
+      "settings": {
+        "user_name": "Sarah A.",
+        "review_count": "132,535+"
+      }
+    }
+  ]
+}
+{% endschema %}

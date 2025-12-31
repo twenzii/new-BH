@@ -1,0 +1,149 @@
+{% schema %}
+{
+  "name": "As Seen In Slider",
+  "class": "as-seen-in-slider",
+  "settings": [
+    {
+      "type": "range",
+      "id": "logo_size",
+      "label": "Logo Size (px)",
+      "min": 50,
+      "max": 120,
+      "step": 5,
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "scroll_speed",
+      "label": "Scroll Speed (Seconds)",
+      "min": 5,
+      "max": 30,
+      "step": 1,
+      "default": 10
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo_image",
+          "label": "Logo Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "As Seen In Slider",
+      "blocks": [
+        { "type": "image" },
+        { "type": "image" },
+        { "type": "image" },
+        { "type": "image" },
+        { "type": "image" }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  .as-seen-in-slider-container {
+    width: 100vw;
+    overflow: hidden;
+    padding: 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+  }
+
+  .as-seen-in-slider-wrapper {
+    width: 100vw; /* ✅ Now it fully stretches */
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .as-seen-in-slider {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    min-width: 100vw; /* ✅ Ensures it fills the full page */
+    white-space: nowrap;
+  }
+
+  .as-seen-in-slider img {
+    max-height: {{ section.settings.logo_size }}px;
+    width: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    .as-seen-in-slider {
+      gap: 1rem;
+      min-width: 100vw;
+      display: flex;
+      justify-content: flex-start;
+    }
+    .as-seen-in-slider img {
+      max-height: {{ section.settings.logo_size | divided_by: 1.5 }}px;
+    }
+  }
+
+  @keyframes scrollInfinite {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+</style>
+
+<div class="as-seen-in-slider-container">
+  <div class="as-seen-in-slider-wrapper">
+    <div class="as-seen-in-slider" id="logo-slider">
+      {% for block in section.blocks %}
+        {% if block.settings.logo_image != blank %}
+          <img 
+            src="{{ block.settings.logo_image | image_url }}" 
+            width="{{ block.settings.logo_image.width }}" 
+            height="{{ block.settings.logo_image.height }}" 
+            alt="Featured in" 
+            loading="lazy">
+        {% endif %}
+      {% endfor %}
+
+      {% for block in section.blocks %}
+        {% if block.settings.logo_image != blank %}
+          <img 
+            src="{{ block.settings.logo_image | image_url }}" 
+            width="{{ block.settings.logo_image.width }}" 
+            height="{{ block.settings.logo_image.height }}" 
+            alt="Featured in" 
+            loading="lazy">
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const slider = document.getElementById("logo-slider");
+
+    let clone = slider.innerHTML;
+    slider.innerHTML += clone; 
+
+    let speed = {{ section.settings.scroll_speed }} * 1000;
+
+    slider.style.animation = `scrollInfinite ${speed}ms linear infinite`;
+  });
+</script>

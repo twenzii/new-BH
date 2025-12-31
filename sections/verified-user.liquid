@@ -1,0 +1,95 @@
+{% schema %}
+{
+  "name": "Verified User Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "user_avatar",
+      "label": "User Avatar"
+    },
+    {
+      "type": "text",
+      "id": "user_name",
+      "label": "User Name",
+      "default": "Sarah A."
+    },
+    {
+      "type": "image_picker",
+      "id": "verified_badge",
+      "label": "Verified Badge"
+    },
+    {
+      "type": "text",
+      "id": "review_count",
+      "label": "Review Count",
+      "default": "132,535+"
+    },
+    {
+      "type": "text",
+      "id": "product_name",
+      "label": "Product Name",
+      "default": "our product"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Verified User",
+      "category": "Product"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="verified-user-section">
+  <div class="user-info">
+    <img 
+      src="{{ section.settings.user_avatar | img_url: '50x50' }}" 
+      alt="User Image" 
+      class="user-avatar"
+    >
+    <span class="user-name"><strong>{{ section.settings.user_name }}</strong></span>
+    <img 
+      src="{{ section.settings.verified_badge | img_url: '30x30' }}" 
+      alt="Verified Badge" 
+      class="verified-badge"
+    >
+    <span class="normal-text">and</span>
+    <span class="review-count"><strong>{{ section.settings.review_count }}</strong></span>
+    others love {{ section.settings.product_name }}
+  </div>
+</div>
+
+<style>
+  .verified-user-section {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    margin-bottom: -16px; /* Adjust if needed */
+    margin-top: -16px;
+  }
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .user-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+  }
+  .user-name {
+    font-weight: bold;
+  }
+  .verified-badge {
+    width: 14px;
+    height: 14px;
+    margin-bottom: -2px;
+  }
+  .normal-text {
+    font-weight: normal;
+  }
+  .review-count {
+    font-weight: bold;
+  }
+</style>
