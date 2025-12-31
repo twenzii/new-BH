@@ -1,0 +1,35 @@
+.product-review-stars {
+  font-size: 12px;
+  margin-bottom: -2px;
+}
+.product-review-stars .stars {
+  color: #000000 !important; 
+}
+
+.product-review-stars .rating-text {
+  color: #666; /* Grey color for text */
+}
+
+.product-info__price .text-lg {
+    font-size: 26px !important;
+    color: #b01720 !important;
+}
+/* Adjust compare-at price font size */
+.product-info__price .text-subdued.line-through {
+    font-size: 22px !important;  /* Change to desired size */
+    color: #888888 !important;      /* Keep it subtle */
+    font-weight: normal;         /* Adjust as needed */
+}
+/* Increase font size for the saving badge */
+.product-info__badge-list .badge {
+    font-size: 12px !important; /* Adjust size as needed */
+    font-weight: bold;
+    padding: 2px 8px; /* Adjust padding for better spacing */
+    position: relative;
+    top: 1px; /* Moves it 1px downward */ 
+}
+.text-on-sale {
+  color: #b01720 !important;
+}
+
+
