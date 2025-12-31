@@ -1,0 +1,59 @@
+<style>
+  .custom-stars {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      font-size: {{ block.settings.font_size }}px;
+      margin-bottom: -4px;
+  }
+  
+  .custom-stars svg {
+      width: 18px;
+      height: 18px;
+  }
+  
+  .filled-star {
+      fill: {{ block.settings.filled_star_color }};
+  }
+  
+  .empty-star {
+      fill: {{ block.settings.empty_star_color }};
+  }
+  
+  .reviews-count {
+      font-size: {{ block.settings.text_font_size }}px;
+      color: {{ block.settings.text_color }};
+      font-weight: bold;
+      margin-left: 5px;
+  }
+</style>
+
+<div class="custom-stars">
+  <!-- 4 Full Stars -->
+  <svg class="filled-star" viewBox="0 0 24 24">
+      <path d="M12 .587l3.668 7.568L24 9.423l-6 5.853L19.334 24 12 19.897 4.666 24 6 15.276 0 9.423l8.332-1.268z"/>
+  </svg>
+  <svg class="filled-star" viewBox="0 0 24 24">
+      <path d="M12 .587l3.668 7.568L24 9.423l-6 5.853L19.334 24 12 19.897 4.666 24 6 15.276 0 9.423l8.332-1.268z"/>
+  </svg>
+  <svg class="filled-star" viewBox="0 0 24 24">
+      <path d="M12 .587l3.668 7.568L24 9.423l-6 5.853L19.334 24 12 19.897 4.666 24 6 15.276 0 9.423l8.332-1.268z"/>
+  </svg>
+  <svg class="filled-star" viewBox="0 0 24 24">
+      <path d="M12 .587l3.668 7.568L24 9.423l-6 5.853L19.334 24 12 19.897 4.666 24 6 15.276 0 9.423l8.332-1.268z"/>
+  </svg>
+
+  <!-- 1 Half Star -->
+  <svg viewBox="0 0 24 24">
+      <defs>
+          <!-- Append block.id to the gradient ID so that multiple instances on the same page are unique -->
+          <linearGradient id="half-star-{{ block.id }}">
+              <stop offset="50%" stop-color="{{ block.settings.filled_star_color }}"/>
+              <stop offset="50%" stop-color="{{ block.settings.empty_star_color }}"/>
+          </linearGradient>
+      </defs>
+      <path fill="url(#half-star-{{ block.id }})" d="M12 .587l3.668 7.568L24 9.423l-6 5.853L19.334 24 12 19.897 4.666 24 6 15.276 0 9.423l8.332-1.268z"/>
+  </svg>
+
+  <span class="reviews-count">{{ block.settings.reviews_text }}</span>
+</div>

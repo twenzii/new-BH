@@ -1,0 +1,141 @@
+{%- comment -%}
+  Size Chart Snippet: Outputs only the size chart markup and styles.
+{%- endcomment -%}
+<style>
+  /* Reset any unwanted margins/padding */
+  .size-chart-container {
+    max-width: 100%;
+    overflow-x: auto;
+    margin: 0;
+    padding: 0;
+  }
+  .size-chart-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    font-weight: bold;
+    table-layout: fixed;
+    margin: 0;
+    padding: 0;
+  }
+  .size-chart-table th, 
+  .size-chart-table td {
+    border: 1px solid #ddd;
+    padding: 0;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    white-space: nowrap;
+    margin: 0;
+  }
+  .size-chart-table th {
+    background-color: #f4f4f4;
+    height: 50px;
+  }
+  .size-chart-table .band-header {
+    font-weight: bold;
+    text-align: center;
+    background-color: white;
+    border: none;
+    height: 30px;
+    margin: 0;
+  }
+  /* Colors based on size */
+  .size-s { background-color: #f7a08b; color: black; }
+  .size-m { background-color: #fde1b8; color: black; }
+  .size-l { background-color: #f5bab0; color: black; }
+  .size-xl { background-color: #8bbeea; color: black; }
+  .size-2xl { background-color: #b1d7c3; color: black; }
+  .size-3xl { background-color: #e7a4f7; color: black; }
+  .size-4xl { background-color: #e7c9b2; color: black; }
+</style>
+<div class="size-chart-container">
+  <table class="size-chart-table">
+    <thead>
+      <tr>
+        <th colspan="11" class="band-header">Band →</th>
+      </tr>
+      <tr>
+        <th>Cup ↓</th>
+        <th>30</th>
+        <th>32</th>
+        <th>34</th>
+        <th>36</th>
+        <th>38</th>
+        <th>40</th>
+        <th>42</th>
+        <th>44</th>
+        <th>46</th>
+        <th>48</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>A</td>
+        <td></td>
+        <td class="size-s">S</td>
+        <td class="size-s">S</td>
+        <td class="size-m">M</td>
+        <td class="size-l">L</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>B</td>
+        <td class="size-s">S</td>
+        <td class="size-s">S</td>
+        <td class="size-s">S</td>
+        <td class="size-m">M</td>
+        <td class="size-l">L</td>
+        <td class="size-l">L</td>
+        <td class="size-xl">XL</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>C</td>
+        <td class="size-s">S</td>
+        <td class="size-s">S</td>
+        <td class="size-m">M</td>
+        <td class="size-l">L</td>
+        <td class="size-l">L</td>
+        <td class="size-xl">XL</td>
+        <td class="size-2xl">2XL</td>
+        <td class="size-2xl">2XL</td>
+        <td class="size-3xl">3XL</td>
+        <td class="size-3xl">3XL</td>
+      </tr>
+      <tr>
+        <td>D</td>
+        <td class="size-s">S</td>
+        <td class="size-m">M</td>
+        <td class="size-m">M</td>
+        <td class="size-l">L</td>
+        <td class="size-xl">XL</td>
+        <td class="size-xl">XL</td>
+        <td class="size-2xl">2XL</td>
+        <td class="size-3xl">3XL</td>
+        <td class="size-3xl">3XL</td>
+        <td class="size-4xl">4XL</td>
+      </tr>
+      <tr>
+        <td>DD/E</td>
+        <td></td>
+        <td class="size-m">M</td>
+        <td class="size-l">L</td>
+        <td class="size-xl">XL</td>
+        <td class="size-xl">XL</td>
+        <td class="size-2xl">2XL</td>
+        <td class="size-2xl">2XL</td>
+        <td class="size-3xl">3XL</td>
+        <td class="size-3xl">3XL</td>
+        <td class="size-4xl">4XL</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

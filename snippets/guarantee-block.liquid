@@ -1,0 +1,33 @@
+<style>
+  .guarantee-section {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      background: #f5f5f5; /* Same grey as previous section */
+      padding: 12px 15px;
+      border-radius: 8px;
+      margin-top: 30px;  /* Space above */
+      margin-bottom: 15px; /* Space below */
+  }
+  .guarantee-icon {
+      width: 40px;
+      height: 40px;
+  }
+  .guarantee-text {
+      font-size: 11px; /* Updated font size */
+      color: #333;
+  }
+  .guarantee-title {
+      font-weight: bold;
+      font-size: 16px; /* Slightly bigger for emphasis */
+      margin-bottom: 3px;
+  }
+</style>
+
+<div class="guarantee-section">
+  <img class="guarantee-icon" src="{{ block.settings.guarantee_icon | img_url: '200x' }}" alt="{{ block.settings.guarantee_heading }}">
+  <div class="guarantee-text">
+    <div class="guarantee-title">{{ block.settings.guarantee_heading }}</div>
+    <div>{{ block.settings.guarantee_text }}</div>
+  </div>
+</div>

@@ -1,0 +1,86 @@
+<div class="container-x987">
+  {% if block.settings.benefit1_text != blank %}
+    <div class="item-z456">
+      {% if block.settings.benefit1_icon != blank %}
+        <img src="{{ block.settings.benefit1_icon | img_url: 'master' }}" alt="Benefit 1 Icon" class="icon-w321">
+      {% endif %}
+      <div class="text-v654">{{ block.settings.benefit1_text }}</div>
+    </div>
+  {% endif %}
+  {% if block.settings.benefit2_text != blank %}
+    <div class="item-z456">
+      {% if block.settings.benefit2_icon != blank %}
+        <img src="{{ block.settings.benefit2_icon | img_url: 'master' }}" alt="Benefit 2 Icon" class="icon-w321">
+      {% endif %}
+      <div class="text-v654">{{ block.settings.benefit2_text }}</div>
+    </div>
+  {% endif %}
+  {% if block.settings.benefit3_text != blank %}
+    <div class="item-z456">
+      {% if block.settings.benefit3_icon != blank %}
+        <img src="{{ block.settings.benefit3_icon | img_url: 'master' }}" alt="Benefit 3 Icon" class="icon-w321">
+      {% endif %}
+      <div class="text-v654">{{ block.settings.benefit3_text }}</div>
+    </div>
+  {% endif %}
+</div>
+
+<style>
+  :root {
+      --text-color: #333;
+      --hover-bg-color: #f1f1f1;
+      --highlight-color: #000;
+      --transition-duration: 0.3s;
+  }
+  
+  .container-x987 {
+      margin-top: -12px;
+      width: 100%;
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+  }
+  
+  .item-z456 {
+      display: flex;
+      align-items: center;
+      padding: 5px 0;
+      border-radius: 8px;
+      transition: background-color var(--transition-duration) ease, transform var(--transition-duration) ease;
+      cursor: default;
+  }
+  
+  .item-z456:hover {
+      background-color: var(--hover-bg-color);
+      transform: translateX(10px);
+  }
+  
+  .icon-w321 {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+      transition: filter var(--transition-duration) ease;
+      filter: none;
+  }
+  
+  .item-z456:hover .icon-w321 {
+      filter: none;
+  }
+  
+  .text-v654 {
+      font-size: 16px;
+      color: var(--text-color);
+      transition: color var(--transition-duration) ease;
+  }
+  
+  .item-z456:hover .text-v654 {
+      color: var(--highlight-color);
+  }
+  
+  @media (max-width: 600px) {
+      .text-v654 {
+          font-size: 16px;
+      }
+  }
+</style>

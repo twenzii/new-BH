@@ -1,0 +1,60 @@
+<div class="verified-user-block-wrapper">
+  <div class="verified-user-section">
+    <div class="user-info">
+      {% if block.settings.user_image != blank %}
+        <img src="{{ block.settings.user_image | img_url: 'master' }}" alt="{{ block.settings.user_name }}" class="user-avatar">
+      {% endif %}
+      <span class="user-name"><strong>{{ block.settings.user_name }}</strong></span>
+      {% if block.settings.verified_badge != blank %}
+        <img src="{{ block.settings.verified_badge | img_url: 'master' }}" alt="Verified Badge" class="verified-badge">
+      {% endif %}
+      <span class="normal-text">and</span>
+      <span class="review-count"><strong>{{ block.settings.review_count }}</strong></span>
+      <span class="others-text">{{ block.settings.others_text }}</span>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Wrapper to force full display */
+  .verified-user-block-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: visible; /* Prevent clipping by parent container */
+    padding: 10px 0; /* Optional spacing */
+    z-index: 1; /* Bring to front if overlapping occurs */
+  }
+  .verified-user-section {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    margin: 0;  /* Remove negative margins */
+    overflow: visible;
+  }
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .user-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .user-name {
+    font-weight: bold;
+  }
+  .verified-badge {
+    width: 14px;
+    height: 14px;
+    margin-bottom: -2px; /* Adjust if needed */
+  }
+  .normal-text {
+    font-weight: normal;
+  }
+  .review-count {
+    font-weight: bold;
+  }
+</style>
