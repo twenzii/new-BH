@@ -51,7 +51,7 @@
         "text_MKgPPp": {
           "type": "text",
           "settings": {
-            "text": "<p>To welcome the new year, we’re opening a limited New Year’s Sale.<br/><br/>Selected pieces only. Limited availability.</p>",
+            "text": "<p>We’re closing the year with appreciation and opening the new one with something special.</p><p>To welcome the New Year, enjoy <strong>exclusive automatic savings</strong> on selected pieces:</p><p>• 10% off when you purchase 2 items<br/>• 15% off when you purchase 3 items<br/>• 20% off when you purchase 4 items<br/>• 25% off when you purchase 5 or more items</p><p>No codes.<br/><br/>Your savings are applied automatically at checkout.</p>",
             "text_custom": false,
             "text_font": "josefin_sans_n4",
             "text_size": 16,
