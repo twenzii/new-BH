@@ -37,7 +37,7 @@
         "heading_6Kz43L": {
           "type": "heading",
           "settings": {
-            "heading": "<p><br/>New Year. New Standards.<br/><br/></p>",
+            "heading": "<p>New Year. New Standards.</p>",
             "heading_custom": false,
             "heading_font": "josefin_sans_n4",
             "heading_size": 52,
@@ -51,7 +51,7 @@
         "text_MKgPPp": {
           "type": "text",
           "settings": {
-            "text": "<p><br/>To welcome the new year, we’re opening a limited New Year’s Sale.<br/><br/>Selected pieces only. Limited availability.<br/><br/></p>",
+            "text": "<p>To welcome the new year, we’re opening a limited New Year’s Sale.<br/><br/>Selected pieces only. Limited availability.</p>",
             "text_custom": false,
             "text_font": "josefin_sans_n4",
             "text_size": 16,
@@ -62,40 +62,13 @@
             "text_color": "#121212"
           }
         },
-        "button_YrFwNh": {
-          "type": "button",
-          "settings": {
-            "button": "Shop now",
-            "url": "",
-            "button_custom": false,
-            "button_font": "josefin_sans_n4",
-            "button_size": 16,
-            "button_size_mobile": 16,
-            "button_height": 100,
-            "button_padding_horizontal": 32,
-            "button_padding_horizontal_mobile": 32,
-            "button_padding_vertical": 16,
-            "button_padding_vertical_mobile": 16,
-            "button_radius": 100,
-            "button_border_thickness": 1,
-            "button_mt": 24,
-            "button_mt_mobile": 24,
-            "button_style": "outline",
-            "button_color": "#FFFFFF",
-            "button_hover_color": "#121212",
-            "button_bg_color": "#121212",
-            "button_bg_hover_color": "#FFFFFF",
-            "button_border_color": "#121212",
-            "button_border_hover_color": "#121212"
-          }
-        },
         "timer_6wVKqr": {
           "type": "timer",
           "settings": {
             "year": "2026",
             "month": "01",
             "days_text": "Days",
-            "day": "01",
+            "day": "06",
             "hours_text": "Hours",
             "hour": "00",
             "minutes_text": "Minutes",
@@ -135,7 +108,6 @@
       "block_order": [
         "heading_6Kz43L",
         "text_MKgPPp",
-        "button_YrFwNh",
         "timer_6wVKqr"
       ],
       "name": "SS - Countdown timer #6",
