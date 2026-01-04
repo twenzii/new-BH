@@ -11,6 +11,7 @@
   "sections": {
     "banner": {
       "type": "collection-banner",
+      "disabled": true,
       "settings": {
         "full_width": false,
         "allow_transparent_header": false,
@@ -30,6 +31,145 @@
         "overlay_opacity": 30
       }
     },
+    "ss_collection_dGP3RY": {
+      "type": "ss-collection",
+      "blocks": {
+        "heading_6Kz43L": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p><br/>New Year. New Standards.<br/><br/></p>",
+            "heading_custom": false,
+            "heading_font": "josefin_sans_n4",
+            "heading_size": 52,
+            "heading_size_mobile": 40,
+            "heading_height": 80,
+            "heading_mt": 16,
+            "heading_mt_mobile": 16,
+            "heading_color": "#121212"
+          }
+        },
+        "text_MKgPPp": {
+          "type": "text",
+          "settings": {
+            "text": "<p><br/>To welcome the new year, we’re opening a limited New Year’s Sale.<br/><br/>Selected pieces only. Limited availability.<br/><br/></p>",
+            "text_custom": false,
+            "text_font": "josefin_sans_n4",
+            "text_size": 16,
+            "text_size_mobile": 16,
+            "text_height": 150,
+            "text_mt": 24,
+            "text_mt_mobile": 24,
+            "text_color": "#121212"
+          }
+        },
+        "button_YrFwNh": {
+          "type": "button",
+          "settings": {
+            "button": "Shop now",
+            "url": "",
+            "button_custom": false,
+            "button_font": "josefin_sans_n4",
+            "button_size": 16,
+            "button_size_mobile": 16,
+            "button_height": 100,
+            "button_padding_horizontal": 32,
+            "button_padding_horizontal_mobile": 32,
+            "button_padding_vertical": 16,
+            "button_padding_vertical_mobile": 16,
+            "button_radius": 100,
+            "button_border_thickness": 1,
+            "button_mt": 24,
+            "button_mt_mobile": 24,
+            "button_style": "outline",
+            "button_color": "#FFFFFF",
+            "button_hover_color": "#121212",
+            "button_bg_color": "#121212",
+            "button_bg_hover_color": "#FFFFFF",
+            "button_border_color": "#121212",
+            "button_border_hover_color": "#121212"
+          }
+        },
+        "timer_6wVKqr": {
+          "type": "timer",
+          "settings": {
+            "year": "2026",
+            "month": "01",
+            "days_text": "Days",
+            "day": "01",
+            "hours_text": "Hours",
+            "hour": "00",
+            "minutes_text": "Minutes",
+            "minute": "00",
+            "seconds_text": "Seconds",
+            "hide_timer_on_completed": true,
+            "timer_mt": 50,
+            "timer_mt_mobile": 32,
+            "timer_gap": 40,
+            "timer_gap_mobile": 24,
+            "timer_border_thickness": 1,
+            "number_custom": false,
+            "number_font": "josefin_sans_n4",
+            "number_size": 40,
+            "number_size_mobile": 28,
+            "number_height": 130,
+            "timer_text_custom": false,
+            "timer_text_font": "josefin_sans_n4",
+            "timer_text_size": 12,
+            "timer_text_size_mobile": 12,
+            "timer_text_height": 130,
+            "timer_text_mt": 4,
+            "timer_text_mt_mobile": 0,
+            "completed_text": "<p>Completed</p>",
+            "completed_text_custom": false,
+            "completed_text_font": "josefin_sans_n4",
+            "completed_text_size": 20,
+            "completed_text_size_mobile": 20,
+            "completed_text_height": 150,
+            "number_color": "#121212",
+            "timer_text_color": "#121212",
+            "completed_text_color": "#121212",
+            "timer_border_color": "#F3F3F3"
+          }
+        }
+      },
+      "block_order": [
+        "heading_6Kz43L",
+        "text_MKgPPp",
+        "button_YrFwNh",
+        "timer_6wVKqr"
+      ],
+      "name": "SS - Countdown timer #6",
+      "settings": {
+        "layout": "content_image",
+        "layout_mobile": "image_content",
+        "layout_height": "fixed_height",
+        "layout_fixed_height": 600,
+        "image": "shopify://shop_images/Winterschlussverkauf_80_Rabatt.png",
+        "image_radius": 6,
+        "image_padding": 42,
+        "image_padding_mobile": 0,
+        "image_ratio_mobile": "landscape",
+        "content_align": "center",
+        "content_align_mobile": "center",
+        "content_vertical_align": "center",
+        "background_color": "#FFFFFF",
+        "background_gradient": "",
+        "border_color": "#121212",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_horizontal": 0,
+        "margin_horizontal_mobile": 0,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_horizontal": 0,
+        "padding_horizontal_mobile": 0,
+        "full_width": true,
+        "content_width": 1200,
+        "border_thickness": 0,
+        "section_radius": 0,
+        "lazy": true
+      }
+    },
     "main": {
       "type": "main-collection",
       "settings": {
@@ -47,6 +187,7 @@
   },
   "order": [
     "banner",
+    "ss_collection_dGP3RY",
     "main"
   ]
 }
