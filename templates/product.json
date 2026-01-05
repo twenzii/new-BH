@@ -41,9 +41,12 @@
         "custom_features_block_LQwN7B": {
           "type": "custom_features_block",
           "settings": {
-            "benefit1_text": "Benefit 1",
-            "benefit2_text": "Benefit 2",
-            "benefit3_text": "Benefit 3"
+            "benefit1_text": "Free & fast worldwide shipping",
+            "benefit1_icon": "shopify://shop_images/fast-delivery-icon-free-vector.png",
+            "benefit2_text": "30 Day Money Back Guarantee",
+            "benefit2_icon": "shopify://shop_images/money-back-refund-investment-ico.png",
+            "benefit3_text": "Trusted By 2000+ Customers in 5 years",
+            "benefit3_icon": "shopify://shop_images/trust-icon-design-free-vector.png"
           }
         },
         "variant_picker": {
@@ -53,7 +56,7 @@
             "stack_blocks": true,
             "selector_style": "block",
             "swatch_selector_style": "swatch",
-            "variant_image_options": "",
+            "variant_image_options": "blue,",
             "size_chart_page": "size-chart"
           }
         },
@@ -141,10 +144,10 @@
       ],
       "settings": {
         "full_width": true,
-        "show_fixed_add_to_cart": false,
+        "show_fixed_add_to_cart": true,
         "desktop_media_width": 55,
         "desktop_media_layout": "grid",
-        "mobile_media_size": "contained",
+        "mobile_media_size": "expanded",
         "mobile_carousel_control": "dots",
         "enable_video_autoplay": false,
         "enable_video_looping": false,
