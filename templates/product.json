@@ -185,22 +185,24 @@
           "type": "slide",
           "settings": {
             "media_style": "image",
+            "image": "shopify://shop_images/1_5206d9fb-a543-4365-a178-f60a14.png",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "controls": false,
             "stars_count": 5,
-            "text": "<p>the perfect candle replacement, obsessed with the lamps!</p>",
-            "author": "<p><strong>@tracer</strong></p>"
+            "text": "<p>Perfect fit and great quality. Feels premium without being heavy.</p>",
+            "author": "<p><strong>~ Harold P.</strong></p>"
           }
         },
         "slide_CyFx7B": {
           "type": "slide",
           "settings": {
             "media_style": "image",
+            "image": "shopify://shop_images/5_a792ffa9-5117-4b1a-ad8c-192597.png",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "controls": false,
             "stars_count": 5,
-            "text": "<p>Our kids bring them everywhere, specially when doing puzzles and drawings</p>",
-            "author": "<p><strong>@theworldisyours</strong></p>"
+            "text": "<p>The cable knit detail is subtle but makes the sweater stand out.</p>",
+            "author": "<p><strong>~ Ryan P</strong></p>"
           }
         },
         "slide_jirfWy": {
@@ -210,8 +212,8 @@
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "controls": false,
             "stars_count": 5,
-            "text": "<p>This is the brand to go for lamps, love the quality and design, as always you get what you pay</p>",
-            "author": "<p><strong>@niels_homes</strong></p>"
+            "text": "<p>Super comfortable and easy to style. Worn it multiple times already.</p>",
+            "author": "<p><strong>Daniel L</strong></p>"
           }
         },
         "slide_pGCqRn": {
@@ -221,8 +223,8 @@
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "controls": false,
             "stars_count": 5,
-            "text": "<p>Love them, they give the perfect luxury touch to any room</p>",
-            "author": "<p><strong>@allfinds</strong></p>"
+            "text": "<p>Quality is better than expected. Looks clean with both jeans and trousers.</p>",
+            "author": "<p><strong>~ Alex F</strong></p>"
           }
         },
         "slide_WEpaM4": {
@@ -232,8 +234,8 @@
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "controls": false,
             "stars_count": 5,
-            "text": "<p>The cordless lamp you've been looking for!</p>",
-            "author": "<p><strong>@lacey</strong></p>"
+            "text": "<p>Minimal design, solid fabric, and fits exactly as described.</p>",
+            "author": "<p><strong>~ Mark Y</strong></p>"
           }
         },
         "slide_jEBAHG": {
@@ -244,18 +246,7 @@
             "controls": false,
             "stars_count": 5,
             "text": "<p>All my friends want them too now, at least I was the first one to get them..!</p>",
-            "author": "<p><strong>@mcqueen</strong></p>"
-          }
-        },
-        "slide_46wWjh": {
-          "type": "slide",
-          "settings": {
-            "media_style": "image",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "controls": false,
-            "stars_count": 5,
-            "text": "<p>I use it every day early in the morning and on our dining table, it is do convenient and cool</p>",
-            "author": "<p><strong>@dwithpatty</strong></p>"
+            "author": "<p><strong>~ Chris B</strong></p>"
           }
         }
       },
@@ -265,8 +256,7 @@
         "slide_jirfWy",
         "slide_pGCqRn",
         "slide_WEpaM4",
-        "slide_jEBAHG",
-        "slide_46wWjh"
+        "slide_jEBAHG"
       ],
       "name": "SS - Testimonials #12",
       "settings": {
@@ -395,51 +385,11 @@
         "product_card_background": "",
         "product_card_text_color": ""
       }
-    },
-    "rich_text_LtFwEd": {
-      "type": "rich-text",
-      "blocks": {
-        "subheading_nCN7x8": {
-          "type": "subheading",
-          "settings": {
-            "text": "Subheading"
-          }
-        },
-        "heading_f4gDJd": {
-          "type": "heading",
-          "settings": {
-            "text": "Heading",
-            "heading_tag": "h1",
-            "text_color": "",
-            "gradient": ""
-          }
-        },
-        "richtext_izjMwK": {
-          "type": "richtext",
-          "settings": {
-            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "subheading_nCN7x8",
-        "heading_f4gDJd",
-        "richtext_izjMwK"
-      ],
-      "settings": {
-        "full_width": true,
-        "content_width": "small",
-        "text_position": "center",
-        "background": "",
-        "background_gradient": "",
-        "text_color": ""
-      }
     }
   },
   "order": [
     "main",
     "ss_testi12_TFJba8",
-    "related_products_T8jMtF",
-    "rich_text_LtFwEd"
+    "related_products_T8jMtF"
   ]
 }
