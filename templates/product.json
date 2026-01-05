@@ -66,6 +66,12 @@
             "liquid": "<div id=\"stock-indicator\" class=\"stock-indicator\">\n    <div class=\"stock-text-wrapper\">\n        <div class=\"blink-dot\"></div>\n        <span id=\"stock-text\">Currently this item has <span id=\"stock-count\">6</span> in stock!  </span>\n    </div>\n    <div class=\"stock-bar\">\n        <div id=\"stock-fill\" class=\"stock-fill\" style=\"width: 30%;\"></div>\n    </div>\n</div>\n\n<style>\n    .stock-indicator {\n        font-family: 'Barlow',\n        font-size: 0.9rem;\n        font-weight: normal;\n        color: #F28C28;\n        margin-top: 1px;\n        display: flex;\n        flex-direction: column;\n        align-items: flex-start;\n    }\n\n    .stock-text-wrapper {\n        display: flex;\n        align-items: center;\n        gap: 6px;\n    }\n\n    .blink-dot {\n        width: 7px;\n        height: 7px;\n        background-color: #F28C28;\n        border-radius: 50%;\n        animation: blink 1.5s infinite ease-in-out;\n    }\n\n    .stock-bar {\n        width: 100%;\n        height: 4px;\n        background: #EAEAEA;\n        border-radius: 2px;\n        overflow: hidden;\n        margin-top: 6px;\n    }\n\n    .stock-fill {\n        height: 100%;\n        background: #F28C28;\n        transition: width 1s ease-out;\n    }\n\n    @keyframes blink {\n        0%, 100% { opacity: 1; }\n        50% { opacity: 0.7; }\n    }\n</style>\n\n<script>\n    document.addEventListener(\"DOMContentLoaded\", function () {\n        const updates = [\n            { delay: 0,      count: 6, width: \"30%\" },  // Start\n            { delay: 3000,   count: 5, width: \"25%\" },\n            { delay: 8000,   count: 4, width: \"20%\" },\n            { delay: 15000,  count: 3, width: \"15%\" },\n            { delay: 25000,  count: 2, width: \"10%\" }\n        ];\n\n        updates.forEach(update => {\n            setTimeout(() => {\n                document.getElementById(\"stock-count\").innerText = update.count;\n                document.getElementById(\"stock-fill\").style.width = update.width;\n            }, update.delay);\n        });\n    });\n</script>"
           }
         },
+        "liquid_F7cdPy": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<div class=\"product-info__liquid\">\n              <div class=\"main-product_block main-product_block-custom_liquid\">\n  <div class=\"m-product-text\" style=\"margin-bottom: -16px;\"> <!-- 🔻 Hier witruimte onderaan minimaal gemaakt -->\n    <div style=\"background-color: #FDE8EC; padding: 12px 16px; font-size: 14px; display: inline-flex; align-items: center; border-radius: 8px; color: #D32F2F; margin: 0 auto; width: 100%; box-sizing: border-box;\">\n      <img style=\"width: 50px; height: 50px; margin-right: 16px; flex-shrink: 0; object-fit: cover; border-radius: 4px;\" src=\"https://cdn.shopify.com/s/files/1/0967/1966/7547/files/1759711916911.webp?v=1761594231\" alt=\"\">\n      <div style=\"line-height: 1.4; flex: 1;\">\n        <span style=\"color:#D32F2F; font-size: 15px;\">\n          Special Hour ! Order now and receive a free Bracelet worth over £19,99, only for the next \n          <span id=\"remaining-spots\" style=\"font-family: 'Nimbus_Sans_Becker_T_Bold'; color: #C62828; font-weight: bold;\">2</span> people. \n          <br><strong>Limited time offer</strong>\n        </span>\n      </div>\n    </div>\n\n    <script>\n    if (typeof window.globalTimer === 'undefined') {\n        window.globalTimer = {\n            updates: [\n                { delay: 0, count: 10 },\n                { delay: 2000, count: 9 },\n                { delay: 3500, count: 8 },\n                { delay: 5500, count: 7 },\n                { delay: 8000, count: 6 },\n                { delay: 11000, count: 5 },\n                { delay: 15000, count: 4 },\n                { delay: 20000, count: 3 },\n                { delay: 27000, count: 2 }\n            ],\n            startTime: Date.now(),\n            currentCount: 10,\n            intervalId: null\n        };\n\n        window.globalTimer.updateDisplay = function() {\n            const remainingSpotsElement = document.getElementById(\"remaining-spots\");\n            if (remainingSpotsElement) {\n                remainingSpotsElement.textContent = window.globalTimer.currentCount;\n            }\n        };\n\n        window.globalTimer.runTimer = function() {\n            const elapsedTime = Date.now() - window.globalTimer.startTime;\n            for (let i = window.globalTimer.updates.length - 1; i >= 0; i--) {\n                if (elapsedTime >= window.globalTimer.updates[i].delay) {\n                    window.globalTimer.currentCount = window.globalTimer.updates[i].count;\n                    break;\n                }\n            }\n            window.globalTimer.updateDisplay();\n        };\n\n        window.globalTimer.intervalId = setInterval(window.globalTimer.runTimer, 1000);\n    }\n\n    // Immediate update on script load\n    window.globalTimer.updateDisplay();\n\n    // Update on DOM content loaded\n    document.addEventListener('DOMContentLoaded', window.globalTimer.updateDisplay);\n\n    // Update on window load\n    window.addEventListener('load', window.globalTimer.updateDisplay);\n    </script>\n\n    <style>\n    #remaining-spots {\n        color: #C62828;\n    }\n    </style>\n  </div>\n</div>\n            </div>"
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -75,12 +81,6 @@
             "atc_button_text_color": "#ffffff",
             "payment_button_background": "",
             "payment_button_text_color": ""
-          }
-        },
-        "liquid_F7cdPy": {
-          "type": "liquid",
-          "settings": {
-            "liquid": "<div class=\"product-info__liquid\">\n              <div class=\"main-product_block main-product_block-custom_liquid\">\n  <div class=\"m-product-text\" style=\"margin-bottom: -16px;\"> <!-- 🔻 Hier witruimte onderaan minimaal gemaakt -->\n    <div style=\"background-color: #FDE8EC; padding: 12px 16px; font-size: 14px; display: inline-flex; align-items: center; border-radius: 8px; color: #D32F2F; margin: 0 auto; width: 100%; box-sizing: border-box;\">\n      <img style=\"width: 50px; height: 50px; margin-right: 16px; flex-shrink: 0; object-fit: cover; border-radius: 4px;\" src=\"https://cdn.shopify.com/s/files/1/0967/1966/7547/files/1759711916911.webp?v=1761594231\" alt=\"\">\n      <div style=\"line-height: 1.4; flex: 1;\">\n        <span style=\"color:#D32F2F; font-size: 15px;\">\n          Special Hour ! Order now and receive a free Bracelet worth over £19,99, only for the next \n          <span id=\"remaining-spots\" style=\"font-family: 'Nimbus_Sans_Becker_T_Bold'; color: #C62828; font-weight: bold;\">2</span> people. \n          <br><strong>Limited time offer</strong>\n        </span>\n      </div>\n    </div>\n\n    <script>\n    if (typeof window.globalTimer === 'undefined') {\n        window.globalTimer = {\n            updates: [\n                { delay: 0, count: 10 },\n                { delay: 2000, count: 9 },\n                { delay: 3500, count: 8 },\n                { delay: 5500, count: 7 },\n                { delay: 8000, count: 6 },\n                { delay: 11000, count: 5 },\n                { delay: 15000, count: 4 },\n                { delay: 20000, count: 3 },\n                { delay: 27000, count: 2 }\n            ],\n            startTime: Date.now(),\n            currentCount: 10,\n            intervalId: null\n        };\n\n        window.globalTimer.updateDisplay = function() {\n            const remainingSpotsElement = document.getElementById(\"remaining-spots\");\n            if (remainingSpotsElement) {\n                remainingSpotsElement.textContent = window.globalTimer.currentCount;\n            }\n        };\n\n        window.globalTimer.runTimer = function() {\n            const elapsedTime = Date.now() - window.globalTimer.startTime;\n            for (let i = window.globalTimer.updates.length - 1; i >= 0; i--) {\n                if (elapsedTime >= window.globalTimer.updates[i].delay) {\n                    window.globalTimer.currentCount = window.globalTimer.updates[i].count;\n                    break;\n                }\n            }\n            window.globalTimer.updateDisplay();\n        };\n\n        window.globalTimer.intervalId = setInterval(window.globalTimer.runTimer, 1000);\n    }\n\n    // Immediate update on script load\n    window.globalTimer.updateDisplay();\n\n    // Update on DOM content loaded\n    document.addEventListener('DOMContentLoaded', window.globalTimer.updateDisplay);\n\n    // Update on window load\n    window.addEventListener('load', window.globalTimer.updateDisplay);\n    </script>\n\n    <style>\n    #remaining-spots {\n        color: #C62828;\n    }\n    </style>\n  </div>\n</div>\n            </div>"
           }
         },
         "guarantee_inTCFX": {
@@ -140,14 +140,6 @@
           "settings": {
             "liquid": "<div class=\"toggle-content\" id=\"tab-size-chart-mobile\" style=\"display: block;\"><div class=\"cc-fitfinder\">\n  <h3>Find Your Perfect Size</h3>\n  <p class=\"cc-sub\">Enter your height and weight for a quick size recommendation.</p>\n\n  <div class=\"cc-grid\">\n    <label class=\"cc-field\">\n      <span>Height (cm)</span>\n      <input id=\"ccHeight\" type=\"number\" inputmode=\"numeric\" placeholder=\"e.g. 170\" min=\"120\" max=\"220\">\n    </label>\n\n    <label class=\"cc-field\">\n      <span>Weight (kg)</span>\n      <input id=\"ccWeight\" type=\"number\" inputmode=\"numeric\" placeholder=\"e.g. 65\" min=\"30\" max=\"200\">\n    </label>\n\n    <button class=\"cc-btn\" id=\"ccCalcBtn\" type=\"button\">Get My Size</button>\n  </div>\n\n  <div class=\"cc-result\" id=\"ccResult\" style=\"display: block;\">\n    <div class=\"cc-badge\" id=\"ccSizeBadge\">Recommended Size: M</div>\n    <p class=\"cc-note\" id=\"ccNoteText\">This is a quick estimate based on height and weight.</p>\n    <p class=\"cc-small\" id=\"ccWhyText\">Height: 170 cm • Weight: 66 kg • BMI: 22.8.</p>\n  </div>\n\n  <p class=\"cc-disclaimer\">\n    *This is a quick estimate based on height and weight. Fit can vary by body shape and preference.\n  </p>\n</div>\n\n<style>\n  .cc-fitfinder{\n    border:1px solid #eaeaea;\n    border-radius:14px;\n    padding:16px;\n    margin:14px 0 20px;\n  }\n  .cc-fitfinder h3{ margin:0 0 6px; font-size:20px; }\n  .cc-sub{ margin:0 0 14px; color:#666; font-size:14px; }\n\n  .cc-grid{\n    display:grid;\n    grid-template-columns: 1fr 1fr;\n    gap:10px;\n    align-items:end;\n  }\n\n  .cc-field span{\n    display:block;\n    font-size:13px;\n    color:#555;\n    margin:0 0 6px;\n  }\n  .cc-field input{\n    width:100%;\n    padding:12px 12px;\n    border:1px solid #ddd;\n    border-radius:10px;\n    font-size:14px;\n    outline:none;\n    background:#fff;\n    height:44px;\n  }\n  .cc-field input:focus{ border-color:#bbb; }\n\n  .cc-btn{\n    padding:12px 14px;\n    border:none;\n    border-radius:10px;\n    cursor:pointer;\n    font-size:14px;\n    font-weight:700;\n    background:#111;\n    color:#fff;\n    height:44px;\n    white-space:nowrap;\n    grid-column: 1 / -1;\n  }\n\n  .cc-result{\n    margin-top:14px;\n    padding:12px;\n    border-radius:12px;\n    background:#fafafa;\n    border:1px solid #eee;\n  }\n  .cc-badge{\n    display:inline-block;\n    padding:8px 12px;\n    border-radius:999px;\n    background:#111;\n    color:#fff;\n    font-weight:800;\n    font-size:14px;\n    margin-bottom:8px;\n  }\n  .cc-note{ margin:0 0 6px; color:#333; font-size:14px; }\n  .cc-small{ margin:0; color:#666; font-size:13px; line-height:1.35; }\n  .cc-disclaimer{ margin:12px 0 0; color:#888; font-size:12px; }\n\n  @media (max-width: 749px){\n    .cc-grid{ grid-template-columns: 1fr; }\n    .cc-btn{ width:100%; }\n  }\n</style>\n\n<script>\n(function(){\n  const btn = document.getElementById(\"ccCalcBtn\");\n  const hEl = document.getElementById(\"ccHeight\");\n  const wEl = document.getElementById(\"ccWeight\");\n\n  const result = document.getElementById(\"ccResult\");\n  const badge  = document.getElementById(\"ccSizeBadge\");\n  const note   = document.getElementById(\"ccNoteText\");\n  const why    = document.getElementById(\"ccWhyText\");\n\n  if(!btn) return;\n\n  const clamp = (v,min,max)=>Math.max(min,Math.min(max,v));\n\n  function recommendSizeFromBMI(heightCm, weightKg){\n    const h = heightCm / 100;\n    const bmi = weightKg / (h*h);\n\n    // BMI -> size mapping (EDIT THESE IF NEEDED)\n    if (bmi < 19.5) return { size:\"XS\", bmi };\n    if (bmi < 22.0) return { size:\"S\",  bmi };\n    if (bmi < 25.0) return { size:\"M\",  bmi };\n    if (bmi < 28.5) return { size:\"L\",  bmi };\n    if (bmi < 32.0) return { size:\"XL\", bmi };\n    if (bmi < 35.5) return { size:\"2XL\",bmi };\n    return { size:\"3XL (XXXL)\", bmi };\n  }\n\n  btn.addEventListener(\"click\", function(){\n    const height = parseFloat(hEl.value);\n    const weight = parseFloat(wEl.value);\n\n    if(!height || !weight){\n      result.style.display = \"block\";\n      badge.textContent = \"Please enter height + weight\";\n      note.textContent = \"Add your height (cm) and weight (kg) to get a recommendation.\";\n      why.textContent = \"\";\n      return;\n    }\n\n    const heightC = clamp(height, 120, 220);\n    const weightC = clamp(weight, 30, 200);\n\n    const rec = recommendSizeFromBMI(heightC, weightC);\n\n    result.style.display = \"block\";\n    badge.textContent = \"Recommended Size: \" + rec.size;\n    note.textContent = \"This is a quick estimate based on height and weight.\";\n    why.textContent = \"Height: \" + heightC + \" cm • Weight: \" + weightC + \" kg • BMI: \" + rec.bmi.toFixed(1) + \".\";\n  });\n})();\n</script>\n</div>"
           }
-        },
-        "verified_user_block": {
-          "type": "verified_user_block",
-          "settings": {
-            "user_name": "Sarah A.",
-            "review_count": "132,535+",
-            "others_text": "others love our x"
-          }
         }
       },
       "block_order": [
@@ -159,15 +151,14 @@
         "custom_features_block_LQwN7B",
         "variant_picker",
         "liquid_WTM9kf",
-        "buy_buttons",
         "liquid_F7cdPy",
+        "buy_buttons",
         "guarantee_inTCFX",
         "description_F9EAVF",
         "collapsible_text_nd9tPL",
         "collapsible_text_tzY34H",
         "collapsible_text_QFjpBK",
-        "liquid_rUFm4h",
-        "verified_user_block"
+        "liquid_rUFm4h"
       ],
       "settings": {
         "full_width": true,
@@ -187,207 +178,200 @@
         "input_text_color": ""
       }
     },
-    "as_seen_in_Xr6Hgn": {
-      "type": "as-seen-in",
+    "ss_testi12_TFJba8": {
+      "type": "ss-testi12",
       "blocks": {
-        "logo_LWm9bq": {
-          "type": "logo",
-          "settings": {}
-        },
-        "logo_DkLJ8X": {
-          "type": "logo",
-          "settings": {}
-        },
-        "logo_V8UzTr": {
-          "type": "logo",
-          "settings": {}
-        },
-        "logo_gR8nnX": {
-          "type": "logo",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "logo_LWm9bq",
-        "logo_DkLJ8X",
-        "logo_V8UzTr",
-        "logo_gR8nnX"
-      ],
-      "settings": {}
-    },
-    "reviews_section_zkRjLg": {
-      "type": "reviews-section",
-      "blocks": {
-        "review_VXK6V7": {
-          "type": "review",
+        "slide_QBfhAQ": {
+          "type": "slide",
           "settings": {
-            "name": "Jessica L.",
-            "stars": "★★★★★",
-            "review_text": "Review 1"
+            "media_style": "image",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "controls": false,
+            "stars_count": 5,
+            "text": "<p>the perfect candle replacement, obsessed with the lamps!</p>",
+            "author": "<p><strong>@tracer</strong></p>"
+          }
+        },
+        "slide_CyFx7B": {
+          "type": "slide",
+          "settings": {
+            "media_style": "image",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "controls": false,
+            "stars_count": 5,
+            "text": "<p>Our kids bring them everywhere, specially when doing puzzles and drawings</p>",
+            "author": "<p><strong>@theworldisyours</strong></p>"
+          }
+        },
+        "slide_jirfWy": {
+          "type": "slide",
+          "settings": {
+            "media_style": "image",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "controls": false,
+            "stars_count": 5,
+            "text": "<p>This is the brand to go for lamps, love the quality and design, as always you get what you pay</p>",
+            "author": "<p><strong>@niels_homes</strong></p>"
+          }
+        },
+        "slide_pGCqRn": {
+          "type": "slide",
+          "settings": {
+            "media_style": "image",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "controls": false,
+            "stars_count": 5,
+            "text": "<p>Love them, they give the perfect luxury touch to any room</p>",
+            "author": "<p><strong>@allfinds</strong></p>"
+          }
+        },
+        "slide_WEpaM4": {
+          "type": "slide",
+          "settings": {
+            "media_style": "image",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "controls": false,
+            "stars_count": 5,
+            "text": "<p>The cordless lamp you've been looking for!</p>",
+            "author": "<p><strong>@lacey</strong></p>"
+          }
+        },
+        "slide_jEBAHG": {
+          "type": "slide",
+          "settings": {
+            "media_style": "image",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "controls": false,
+            "stars_count": 5,
+            "text": "<p>All my friends want them too now, at least I was the first one to get them..!</p>",
+            "author": "<p><strong>@mcqueen</strong></p>"
+          }
+        },
+        "slide_46wWjh": {
+          "type": "slide",
+          "settings": {
+            "media_style": "image",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "controls": false,
+            "stars_count": 5,
+            "text": "<p>I use it every day early in the morning and on our dining table, it is do convenient and cool</p>",
+            "author": "<p><strong>@dwithpatty</strong></p>"
           }
         }
       },
       "block_order": [
-        "review_VXK6V7"
+        "slide_QBfhAQ",
+        "slide_CyFx7B",
+        "slide_jirfWy",
+        "slide_pGCqRn",
+        "slide_WEpaM4",
+        "slide_jEBAHG",
+        "slide_46wWjh"
       ],
+      "name": "SS - Testimonials #12",
       "settings": {
-        "reviews_title": "Honest Reviews About x",
-        "reviews_subheading": "Sub <strong>Heading</strong>",
-        "star_color": "#000000"
-      }
-    },
-    "media_with_text_kaP9bz": {
-      "type": "media-with-text",
-      "blocks": {
-        "image_JtthaL": {
-          "type": "image",
-          "settings": {
-            "media_width": 50,
-            "media_position": "start",
-            "text_position": "place-self-center text-center",
-            "icon": "none",
-            "icon_width": 48,
-            "subheading": "",
-            "title": "Wat Makes Our Products So Unique?",
-            "content": "",
-            "link_text": "",
-            "link_url": "",
-            "background": "#ffffff",
-            "background_gradient": "",
-            "text_color": "#1a1a1a",
-            "text_gradient": "",
-            "button_background": "",
-            "button_text_color": ""
-          }
-        }
-      },
-      "block_order": [
-        "image_JtthaL"
-      ],
-      "custom_css": [],
-      "settings": {
-        "full_width": true,
-        "alternate_media_position": false,
-        "spacing": "none"
-      }
-    },
-    "custom_icon_section_VR9nbh": {
-      "type": "custom-icon-section",
-      "blocks": {
-        "icon_text_mHdNaT": {
-          "type": "icon_text",
-          "settings": {
-            "title": "Feature Title",
-            "description": "Feature description goes here."
-          }
-        },
-        "icon_text_Ra66cV": {
-          "type": "icon_text",
-          "settings": {
-            "title": "Feature Title",
-            "description": "Feature description goes here."
-          }
-        },
-        "icon_text_mDMfNF": {
-          "type": "icon_text",
-          "settings": {
-            "title": "Feature Title",
-            "description": "Feature description goes here."
-          }
-        },
-        "icon_text_LVhhAL": {
-          "type": "icon_text",
-          "settings": {
-            "title": "Feature Title",
-            "description": "Feature description goes here."
-          }
-        }
-      },
-      "block_order": [
-        "icon_text_mHdNaT",
-        "icon_text_Ra66cV",
-        "icon_text_mDMfNF",
-        "icon_text_LVhhAL"
-      ],
-      "settings": {}
-    },
-    "as_seen_in_slider_dVc6NE": {
-      "type": "as-seen-in-slider",
-      "blocks": {
-        "image_hqBVEt": {
-          "type": "image",
-          "settings": {}
-        },
-        "image_KxpPE9": {
-          "type": "image",
-          "settings": {}
-        },
-        "image_G8bxgh": {
-          "type": "image",
-          "settings": {}
-        },
-        "image_ji8BCt": {
-          "type": "image",
-          "settings": {}
-        },
-        "image_tWzikE": {
-          "type": "image",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "image_hqBVEt",
-        "image_KxpPE9",
-        "image_G8bxgh",
-        "image_ji8BCt",
-        "image_tWzikE"
-      ],
-      "settings": {
-        "logo_size": 50,
-        "scroll_speed": 30
-      }
-    },
-    "multiple_images_with_text_XGiqd7": {
-      "type": "multiple-images-with-text",
-      "blocks": {
-        "item_TmPHyY": {
-          "type": "item",
-          "settings": {
-            "image_rotation_degrees": -3.5
-          }
-        },
-        "item_CGYNV7": {
-          "type": "item",
-          "settings": {
-            "image_rotation_degrees": 0
-          }
-        },
-        "item_dkxN7d": {
-          "type": "item",
-          "settings": {
-            "image_rotation_degrees": 0
-          }
-        }
-      },
-      "block_order": [
-        "item_TmPHyY",
-        "item_CGYNV7",
-        "item_dkxN7d"
-      ],
-      "settings": {
-        "full_width": true,
-        "images_layout": "collage",
-        "collage_images_alignment": "middle",
-        "background": "",
+        "heading": "<h2>Loved by everyone, everywhere. Don't miss out.</h2>",
+        "heading_custom": false,
+        "heading_font": "josefin_sans_n4",
+        "heading_size": 30,
+        "heading_size_mobile": 22,
+        "heading_height": 130,
+        "heading_align": "center",
+        "heading_align_mobile": "center",
+        "sub_heading": "",
+        "sub_heading_custom": false,
+        "sub_heading_font": "josefin_sans_n4",
+        "sub_heading_size": 30,
+        "sub_heading_size_mobile": 22,
+        "sub_heading_height": 130,
+        "sub_heading_mt": 12,
+        "sub_heading_align": "center",
+        "sub_heading_align_mobile": "center",
+        "slider_view": 5.4,
+        "slider_view_mobile": 1.6,
+        "slider_gap": 28,
+        "slider_gap_mobile": 20,
+        "slider_mt": 20,
+        "autoplay": false,
+        "autoplay_delay": 5,
+        "card_padding_vertical": 20,
+        "card_padding_vertical_mobile": 16,
+        "card_padding_horizontal": 20,
+        "card_padding_horizontal_mobile": 16,
+        "card_radius": 20,
+        "card_border_thickness": 1,
+        "card_shadow": false,
+        "media_radius": 20,
+        "media_border_thickness": 0,
+        "media_ratio": "square",
+        "media_ratio_mobile": "square",
+        "content_padding_vertical": 0,
+        "content_padding_vertical_mobile": 0,
+        "content_padding_horizontal": 0,
+        "content_padding_horizontal_mobile": 0,
+        "hide_content": false,
+        "stars_size": 16,
+        "stars_mt": 12,
+        "stars_align": "center",
+        "stars_align_mobile": "center",
+        "text_custom": false,
+        "text_font": "josefin_sans_n4",
+        "text_size": 16,
+        "text_size_mobile": 16,
+        "text_height": 130,
+        "text_mt": 12,
+        "text_align": "center",
+        "text_align_mobile": "center",
+        "author_custom": false,
+        "author_font": "josefin_sans_n4",
+        "author_size": 14,
+        "author_size_mobile": 14,
+        "author_height": 130,
+        "author_mt": 12,
+        "author_align": "center",
+        "author_align_mobile": "center",
+        "navigation_mt": 40,
+        "navigation_gap": 20,
+        "navigation_align": "center",
+        "navigation_align_mobile": "center",
+        "arrow_size": 50,
+        "arrow_size_mobile": 50,
+        "arrow_show_desktop": true,
+        "arrow_show_mobile": false,
+        "dots_size": 10,
+        "dots_size_mobile": 10,
+        "dots_show_desktop": false,
+        "dots_show_mobile": true,
+        "btn_icon_size": 50,
+        "btn_icon_size_mobile": 40,
+        "card_bg_color": "#FFFFFF",
+        "card_bg_gradient": "",
+        "card_border_color": "#DEDBC4",
+        "card_shadow_color": "#000000",
+        "media_border_color": "#000000",
+        "stars_color": "#323232",
+        "text_color": "#323232",
+        "author_color": "#323232",
+        "video_icon_bg_color": "#FFFFFF",
+        "video_icon_color": "#000000",
+        "arrow_color": "#837c5c",
+        "arrow_hover_color": "#837c5c",
+        "dots_color": "#837c5c",
+        "heading_color": "#837c5c",
+        "sub_heading_color": "#837c5c",
+        "background_color": "#F6F5F2",
         "background_gradient": "",
-        "text_color": "",
-        "button_background": "",
-        "button_text_color": "",
-        "subheading": "Title",
-        "title": "Subtitle",
-        "content": "<p>Text</p>",
-        "button_url": "",
-        "button_text": ""
+        "border_color": "#000000",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_horizontal": 0,
+        "padding_horizontal_mobile": 0,
+        "full_width": true,
+        "content_width": 120,
+        "border_thickness": 0,
+        "lazy": true
       }
     },
     "related_products_T8jMtF": {
@@ -450,29 +434,12 @@
         "background_gradient": "",
         "text_color": ""
       }
-    },
-    "opinew-reviews-product-page-code": {
-      "type": "apps",
-      "settings": {
-        "full_width": true,
-        "remove_vertical_spacing": false,
-        "remove_horizontal_spacing": false,
-        "background": "",
-        "background_gradient": "",
-        "text_color": ""
-      }
     }
   },
   "order": [
     "main",
-    "as_seen_in_Xr6Hgn",
-    "reviews_section_zkRjLg",
-    "media_with_text_kaP9bz",
-    "custom_icon_section_VR9nbh",
-    "as_seen_in_slider_dVc6NE",
-    "multiple_images_with_text_XGiqd7",
+    "ss_testi12_TFJba8",
     "related_products_T8jMtF",
-    "rich_text_LtFwEd",
-    "opinew-reviews-product-page-code"
+    "rich_text_LtFwEd"
   ]
 }
