@@ -45,6 +45,7 @@
     "show_secondary_image": true,
     "show_quick_buy": false,
     "product_rating_mode": "rating",
+    "show_sold_out_badge": false,
     "discount_mode": "percentage",
     "product_color_display": "hide",
     "product_image_aspect_ratio": "square_crop",
