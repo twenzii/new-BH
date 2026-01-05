@@ -209,6 +209,7 @@
           "type": "slide",
           "settings": {
             "media_style": "image",
+            "image": "shopify://shop_images/6_22c1cfc4-8412-404b-be57-83c8a8.png",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "controls": false,
             "stars_count": 5,
@@ -220,6 +221,7 @@
           "type": "slide",
           "settings": {
             "media_style": "image",
+            "image": "shopify://shop_images/2_fb447385-2448-49c6-8591-ad81da.png",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "controls": false,
             "stars_count": 5,
@@ -231,22 +233,12 @@
           "type": "slide",
           "settings": {
             "media_style": "image",
+            "image": "shopify://shop_images/7_eec9978b-41be-41b8-8d5d-42118c.png",
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "controls": false,
             "stars_count": 5,
             "text": "<p>Minimal design, solid fabric, and fits exactly as described.</p>",
             "author": "<p><strong>~ Mark Y</strong></p>"
-          }
-        },
-        "slide_jEBAHG": {
-          "type": "slide",
-          "settings": {
-            "media_style": "image",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "controls": false,
-            "stars_count": 5,
-            "text": "<p>All my friends want them too now, at least I was the first one to get them..!</p>",
-            "author": "<p><strong>~ Chris B</strong></p>"
           }
         }
       },
@@ -255,8 +247,7 @@
         "slide_CyFx7B",
         "slide_jirfWy",
         "slide_pGCqRn",
-        "slide_WEpaM4",
-        "slide_jEBAHG"
+        "slide_WEpaM4"
       ],
       "name": "SS - Testimonials #12",
       "settings": {
