@@ -129,8 +129,8 @@
             "icon": "none",
             "custom_icon": "shopify://shop_images/IMG_1529.png",
             "icon_width": 20,
-            "title": "Returns & Exchanges",
-            "content": "<p><em><strong>Your experience matters to us.</strong></em></p><p>If something isn’t quite right, you may return or exchange your item <strong>within 30 days</strong> of receiving it, as long as it remains unworn, unwashed, and in its original condition. </p><p>Once your return reaches us, our team will review it with care and process your refund or exchange promptly. Should your order arrive damaged or incorrect, we’ll ensure the issue is resolved quickly and smoothly. For any questions or assistance, our support team is here to help you every step of the way.</p>",
+            "title": "Shipping Information",
+            "content": "<p><strong>We offer FREE Shipping!</strong></p><p>Due to the influx of orders from our ongoing <strong>sale</strong>, there will be a slight delay in dispatch. Rest assured, all orders will be shipped within a <strong>24-48 hour timeframe</strong>. Depending on your geographic location, the delivery may take approximately 1-2<strong> business days</strong>.</p>",
             "page": "",
             "custom_liquid": ""
           }
