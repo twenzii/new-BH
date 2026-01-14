@@ -12,15 +12,17 @@
     "slideshow": {
       "type": "slideshow",
       "blocks": {
-        "image_mwmpe6": {
-          "type": "image",
+        "video_miCbkK": {
+          "type": "video",
           "settings": {
-            "image": "shopify://shop_images/ABS2GSlCkZS77g9YhOo2aYpOqbTlg558.png",
-            "content_max_width": 900,
+            "video": "shopify://files/videos/56d5b6e15fa142d7906506d8fb042ef5.HD-720p-2.1Mbps-63368530.mp4",
+            "mobile_video": "shopify://files/videos/56d5b6e15fa142d7906506d8fb042ef5.HD-720p-2.1Mbps-63368530.mp4",
+            "content_max_width": 780,
             "mobile_text_position": "place-self-center text-center",
             "desktop_text_position": "sm:place-self-center sm:text-center",
-            "subheading": "",
-            "title": "",
+            "subheading": "Tell your story",
+            "title": "Slide title",
+            "trust_text": "Trusted By 1M+ Women",
             "heading_tag": "h0",
             "button_text": "",
             "button_link": "",
@@ -35,7 +37,7 @@
         }
       },
       "block_order": [
-        "image_mwmpe6"
+        "video_miCbkK"
       ],
       "settings": {
         "full_width": true,
