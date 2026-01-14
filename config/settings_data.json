@@ -9,6 +9,7 @@
  */
 {
   "current": {
+    "page_width": 1700,
     "section_vertical_spacing": "medium",
     "section_boxed_horizontal_spacing": "xsmall",
     "button_border_radius": 10,
@@ -24,7 +25,7 @@
     "header_text_color": "#000000",
     "footer_background": "#252525",
     "footer_text_color": "#ffffff",
-    "primary_button_background": "#000000",
+    "primary_button_background": "#00456a",
     "primary_button_text_color": "#ffffff",
     "secondary_button_background": "#000000",
     "secondary_button_text_color": "#ffffff",
@@ -39,7 +40,7 @@
     "heading_letter_spacing": -2,
     "text_font": "barlow_n4",
     "currency_code_enabled": false,
-    "heading_apparition": "split_fade",
+    "heading_apparition": "none",
     "color_swatch_style": "round",
     "color_swatch_config": "Nude:#e3bc9a\nBrown:#765449\nbaby blue:#c5e0ff\nYellow:#ffeb99\nchocolate: #692b09\nRose Tan: #cf9693\nBeige: #fde0c1",
     "show_secondary_image": true,
