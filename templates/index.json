@@ -196,16 +196,10 @@
     "rich_text_VPeLg4": {
       "type": "rich-text",
       "blocks": {
-        "subheading_awMtz8": {
-          "type": "subheading",
-          "settings": {
-            "text": "Subheading"
-          }
-        },
         "heading_QC7VEd": {
           "type": "heading",
           "settings": {
-            "text": "Heading",
+            "text": "Across the ocean",
             "heading_tag": "h1",
             "text_color": "",
             "gradient": ""
@@ -214,12 +208,11 @@
         "richtext_D8Pei3": {
           "type": "richtext",
           "settings": {
-            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+            "content": "<p>Inspired by the sea, Dear Girl is where the gentle power of the ocean merges with the light on the horizon. With flowing lines and shimmering textures, we draw inspiration from the coast, the tides, and the waves to create pieces that combine sustainability and elegance.</p>"
           }
         }
       },
       "block_order": [
-        "subheading_awMtz8",
         "heading_QC7VEd",
         "richtext_D8Pei3"
       ],
